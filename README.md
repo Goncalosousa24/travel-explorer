@@ -19,11 +19,13 @@ The application is divided into several powerful modules, offering a comprehensi
 
 ## 📸 Screenshots
 
-| View 1 | View 2 | View 3 |
-|:---:|:---:|:---:|
-| <img width="280" alt="view1" src="https://via.placeholder.com/280x500.png?text=Add+Image+Here" /> | <img width="280" alt="view2" src="https://via.placeholder.com/280x500.png?text=Add+Image+Here" /> | <img width="280" alt="view3" src="https://via.placeholder.com/280x500.png?text=Add+Image+Here" /> |
-
-> ℹ️ **Note:** You can replace the placeholder image links above with your actual project screenshots by editing this README.
+<div align="center">
+  <img width="100%" alt="Travel Explorer - View 1" src="https://github.com/user-attachments/assets/e07970ae-61c3-411e-aa4f-32cf97e51eb2" />
+  <br><br>
+  <img width="100%" alt="Travel Explorer - View 2" src="https://github.com/user-attachments/assets/b5bfc07d-9d49-4f65-ad27-3415d983811e" />
+  <br><br>
+  <img width="100%" alt="Travel Explorer - View 3" src="https://github.com/user-attachments/assets/262197b2-c2e0-40ec-98f8-150f1fca7fe9" />
+</div>
 
 ## 🛠️ Tech Stack & Architecture
 
