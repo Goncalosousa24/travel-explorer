@@ -1,16 +1,63 @@
-# React + Vite
+# 🌍 Travel Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)
 
-Currently, two official plugins are available:
+A fully interactive, highly visual WebGL application designed to provide users with an immersive way to explore global travel destinations. Built as a Single Page Application (SPA), it combines 3D rendering with real-time data to deliver a premium, cinematic browsing experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features & Modules
 
-## React Compiler
+The application is divided into several powerful modules, offering a comprehensive and interactive travel planning experience:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* 🌐 **Interactive 3D Globe:** Explore the world through a high-performance WebGL 3D globe (`react-globe.gl`). Features smooth camera flights, dynamic night skies, and clickable destination markers with multi-language support.
+* ✈️ **Real-Time Context & Widgets:** Instantly access critical information for any destination. Includes live weather updates (OpenWeather API), local time zones, and a custom algorithm that calculates flight duration and distance from your current location.
+* 📰 **Smart Local Guide & News:** Stay informed before you travel. Displays dynamic local news fetched via SerpAPI, alongside a practical guide detailing currency, plug types, water quality, tipping culture, and emergency numbers.
+* 🎬 **Cinematic Scroll Experience:** Immersive destination pages powered by dynamic color extraction (`fast-average-color`). The background seamlessly adapts its gradient to match the visual identity of the current section as you scroll through history, geography, and nature.
+* 🗺️ **360° Street View & Itineraries:** Walk the streets before you arrive using the integrated Google Maps Street View API. Includes an interactive day-by-day itinerary planner with integrated mapping.
+* 🌍 **Multi-Language Support:** Fully localized application supporting English, Portuguese, and French, dynamically adapting all UI elements, destination descriptions, and practical guides.
 
-## Expanding the ESLint configuration
+## 📸 Screenshots
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| View 1 | View 2 | View 3 |
+|:---:|:---:|:---:|
+| <img width="280" alt="view1" src="https://via.placeholder.com/280x500.png?text=Add+Image+Here" /> | <img width="280" alt="view2" src="https://via.placeholder.com/280x500.png?text=Add+Image+Here" /> | <img width="280" alt="view3" src="https://via.placeholder.com/280x500.png?text=Add+Image+Here" /> |
+
+> ℹ️ **Note:** You can replace the placeholder image links above with your actual project screenshots by editing this README.
+
+## 🛠️ Tech Stack & Architecture
+
+This project was built with modern web development standards focusing on high performance and visual fidelity:
+
+* **Framework:** [React 18](https://reactjs.org/) & [Vite](https://vitejs.dev/)
+* **3D Rendering:** `react-globe.gl` (Three.js wrapper for interactive globes)
+* **Animations:** GSAP (GreenSock) & Lottie (`lottie-react`)
+* **State Management:** React Context API & Hooks
+* **Data Integration:** Google Maps API (Places & Street View), OpenWeatherMap API, SerpAPI (Google News)
+* **UI/UX Utilities:** `fast-average-color` (dynamic theming), CSS Modules, CSS Variables
+
+## 🚀 How to Run the Project
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Goncalosousa24/travel-explorer.git
+   ```
+2. **Environment Setup:**
+   * Due to security reasons, API keys are ignored in this repository.
+   * Duplicate the `.env.example` file, rename it to `.env`, and fill in your API keys:
+     * `VITE_GOOGLE_MAPS_API_KEY`
+     * `VITE_OPENWEATHER_API_KEY`
+     * `VITE_SERPAPI_KEY`
+3. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+4. **Run the Development Server:**
+   ```bash
+   npm run dev
+   ```
+
+## 👨‍💻 Author
+
+**Gonçalo Sousa**
+* GitHub: [@Goncalosousa24](https://github.com/Goncalosousa24)
