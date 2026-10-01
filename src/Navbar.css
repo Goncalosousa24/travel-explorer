@@ -1,0 +1,106 @@
+/* GARANTE QUE A BARRA FICA NO TOPO E ACIMA DE TUDO */
+.navbar-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between; /* Separa Logo da Esquerda dos Botões da Direita */
+  align-items: center;
+  padding: 0 50px;
+  z-index: 9999999 !important; /* OBRIGATÓRIO: Fica acima da animação GTA */
+  background-color: transparent; /* Invisível por defeito */
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* AO PASSAR O RATO OU SE O MENU ESTIVER ABERTO -> FICA PRETO */
+.navbar-custom:hover,
+.mega-menu.open ~ .navbar-custom {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* ESTILO DO LOGO E TEXTO */
+.nav-logo {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Sombra para ler sempre */
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links span {
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.nav-btn-explore {
+  background: transparent;
+  border: 1px solid white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.nav-btn-explore:hover {
+  background: white;
+  color: black;
+}
+
+/* MENU GIGANTE (Escondido por defeito) */
+.mega-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: #111;
+  z-index: 9999998; /* Logo abaixo da barra */
+  transform: translateY(-100%); /* Escondido para cima */
+  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.mega-menu.open {
+  transform: translateY(0); /* Desliza para baixo */
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.menu-content span {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  bottom: 20px;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+}

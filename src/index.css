@@ -1,0 +1,65 @@
+/* src/index.css */
+
+/* --- 1. IMPORTAR FONTES DA INTERNET (Google Fonts) --- */
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Italianno&family=Stalinist+One&display=swap');
+
+/* 2. CONFIGURAÇÕES GERAIS */
+:root {
+  font-family: sans-serif; 
+  color: white;
+  background-color: black;
+}
+
+html {
+  height: auto !important;
+  min-height: 100% !important;
+  overflow-y: visible !important; 
+  overflow-x: hidden !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: auto !important;
+  min-height: 100vh !important;
+  overflow-y: visible !important;
+  overflow-x: hidden !important;
+  background-color: black;
+}
+
+#root {
+  height: auto !important;
+  min-height: 100vh !important;
+  overflow: visible !important;
+}
+
+/* 3. ESTILOS ESPECÍFICOS */
+
+/* ESTILO DO TÍTULO PRINCIPAL (TRANSPARÊNCIA MÁXIMA) */
+.titulo-outline {
+  /* Interior 100% invisível (vê-se o vídeo de fundo) */
+  color: transparent; 
+  
+  /* Borda Branca SÓLIDA e forte */
+  -webkit-text-stroke: 2px white;
+  
+  /* IMPORTANTE: Sem sombra (text-shadow: none). 
+     Se houver sombra, ela aparece atrás da transparência e "suja" o interior. 
+     Assim fica cristalino. */
+  text-shadow: none; 
+}
+
+/* 4. ANIMAÇÃO: ESCRITA À MÃO FLUIDA (SUBTÍTULO) */
+.handwriting-effect {
+  overflow: hidden; /* Esconde o texto até ser revelado */
+  white-space: nowrap; /* Mantém numa linha */
+  margin: 0 auto; /* Centra */
+  width: 0; /* Começa com largura zero */
+  
+  /* Animação linear e suave de 3.5 segundos */
+  animation: smooth-write 3.5s linear forwards;
+}
+
+@keyframes smooth-write {
+  to { width: 100%; } /* Revela o texto até ao fim */
+}

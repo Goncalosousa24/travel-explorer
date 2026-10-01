@@ -1,0 +1,162 @@
+/* src/IntroScroll.css */
+
+/* --- 1. IMPORTAÇÃO ONLINE (Stalinist One) --- */
+@import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap');
+
+/* --- ESTRUTURA PRINCIPAL --- */
+.intro-scroll-container {
+  height: 100vh; 
+  position: relative;
+  background-color: black;
+  width: 100%;
+  overflow-x: hidden; 
+}
+
+.intro-sticky-screen {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  
+  /* Otimização 3D para a animação GSAP */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* --- VÍDEO DE FUNDO --- */
+.intro-background-video {
+  position: absolute; 
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover; 
+  z-index: 1;
+  opacity: 0.8; 
+  pointer-events: none;
+  transform: translateZ(0);
+  will-change: opacity;
+}
+
+/* --- OVERLAYS --- */
+.intro-overlay {
+  position: absolute; 
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 2; 
+  pointer-events: none;
+}
+
+.black-fade-overlay {
+  position: absolute; 
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: black; 
+  opacity: 0; 
+  z-index: 5; 
+  pointer-events: none;
+}
+
+/* --- TEXTO CENTRAL (WRAPPER) --- */
+.intro-text-wrapper {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra perfeitamente */
+  z-index: 10;
+  
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+  
+  width: 100%;
+  white-space: nowrap; 
+  
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* --- TÍTULO: TRAVEL EXPLORER (Ajustado para ocupar menos espaço) --- */
+.gta-title {
+  font-family: 'Stalinist One', cursive; 
+  /* Reduzido para encurtar na horizontal (antes era 6vw ou 7vw) */
+  font-size: 4.5vw; 
+  margin: 0; 
+  color: white;
+  text-transform: uppercase; 
+  /* Reduzido para juntar mais as letras (antes era 4px) */
+  letter-spacing: 1px; 
+  line-height: 1.1;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* --- SUBTÍTULO: BEM-VINDO --- */
+.gta-subtitle {
+  font-family: 'CaveatCustom', cursive; /* Certifique-se que esta fonte existe */
+  font-size: 3.5vw; 
+  margin-top: 10px; 
+  color: white;
+  text-shadow: 0 5px 20px rgba(0,0,0,0.8);
+}
+
+/* --- BOTÃO EXPLORAR --- */
+.btn-explorar {
+  pointer-events: auto; 
+  border: 1px solid white; 
+  color: white; 
+  background: rgba(0, 0, 0, 0.3); 
+  padding: 15px 40px; 
+  border-radius: 50px; 
+  cursor: pointer;
+  font-weight: bold; 
+  letter-spacing: 3px; 
+  text-transform: uppercase; 
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.btn-explorar:hover { 
+  background: white; 
+  color: black; 
+  box-shadow: 0 0 20px rgba(255,255,255,0.5); 
+}
+
+/* --- INDICADOR (SCROLL) --- */
+.scroll-indicator-wrapper {
+  position: absolute;
+  bottom: 40px;
+  left: 0; 
+  width: 100%; 
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  
+  z-index: 30;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.scroll-text-top {
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: -8px; 
+  text-shadow: 0 2px 5px rgba(0,0,0,1);
+  text-align: center;
+}
+
+.lottie-arrow {
+  width: 60px; 
+  height: 60px;
+  filter: brightness(0) invert(1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

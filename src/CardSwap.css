@@ -1,0 +1,96 @@
+:root {
+  --card-radius: 24px;
+  --inset-border-color: rgba(0, 0, 0, 0.15); 
+  --card-shadow: 0 20px 50px rgba(0,0,0,0.55);
+  --card-shadow-hover: 0 28px 70px rgba(0,0,0,0.62);
+  --transition-medium: 260ms;
+  
+  /* Cor inicial (Branco) */
+  --active-card-color: #ffffff; 
+}
+
+/* --- CLASSE MÁGICA --- */
+/* Aplique esta classe APENAS no título "O mundo, redefinido" */
+.titulo-reactivo {
+  /* Lê a variável de cor definida pelo JS */
+  color: var(--active-card-color, #ffffff) !important;
+  
+  /* Garante que remove gradientes antigos e força a cor */
+  -webkit-text-fill-color: var(--active-card-color, #ffffff) !important;
+  background: none !important; 
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+
+  /* Transição suave */
+  transition: color 0.5s ease, -webkit-text-fill-color 0.5s ease;
+}
+
+.card-swap-container {
+  position: relative;
+  margin: 0 auto;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--card-radius);
+  background-size: cover;
+  background-position: center;
+  border: none;
+  box-shadow:
+    0 0 0 1.2px rgba(0, 0, 0, 0.25), 
+    inset 0 0 0 1px var(--inset-border-color),
+    var(--card-shadow);
+  outline: 1px solid transparent;
+  background-clip: padding-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  will-change: transform, filter;
+  transition: transform var(--transition-medium) cubic-bezier(.2,.9,.3,1);
+  backface-visibility: hidden;
+}
+
+/* Remove pseudo-elementos que possam causar bugs visuais */
+.card::before, .card::after { display: none !important; }
+
+/* Texto DENTRO do card (os títulos dos países ficam sempre brancos) */
+.card h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1;
+  color: white; 
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.card h4, .card p {
+  color: white;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}
+
+/* Estados */
+.card:hover {
+  transform: translate(-50%, -50%) translateZ(8px) scale(1.01);
+  filter: none;
+}
+
+.card:active {
+  transform: translate(-50%, -50%) translateZ(2px) scale(0.997);
+}
+
+/* Filtros de profundidade */
+.card[data-slot="0"] { filter: brightness(1); }
+.card[data-slot="1"] { filter: brightness(0.92); }
+.card[data-slot="2"] { filter: brightness(0.80); }
+.card[data-slot="3"] { filter: brightness(0.68); }
